@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuhttpc06537_Bai2_lab1</title>
+</head>
+
+<body>
+    <div class="info"></div>
+    <script>
+        function sayHello(lastName, age) {
+            console.log(`I'm ${lastName} I'm ${age}`)
+            const html = `
+            <h2> ${lastName}</h2>
+            <p>${age}</p>
+            `
+            document.querySelector('.info').style.color = 'green'
+            document.querySelector('.info').innerHTML = html
+        }
+        sayHello('Thanh Tú', 19);
+        sayHello('Tú Huỳnh', 20)
+    </script>
+</body>
+
+</html>

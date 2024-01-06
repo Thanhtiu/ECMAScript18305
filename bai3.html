@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tuhttpc06537_Bai3_lab1</title>
+</head>
+
+<body>
+    <ul class="list">
+
+    </ul>
+    <script>
+        var Api = 'https://jsonplaceholder.typicode.com/posts';
+        fetch(Api)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (posts) {
+                var htmlData = posts.map(function (post) {
+                    console.log(posts)
+                    return `<li>
+                        <h2>${post.title}</h2>  
+                        <p>${post.body}</p>
+                        </li>`
+                });
+                var html = htmlData.join('');
+                document.querySelector('.list').innerHTML = html;
+            })
+            .catch(function (err) {
+                alert('Lỗi!')
+            })
+    </script>
+</body>
+
+</html>
